@@ -1,0 +1,74 @@
+/* .txt-btn-small {
+    font-size: small;
+    font-weight: normal;
+    margin-right: 5px;
+} */
+
+.txt-btn-med {
+    font-size: medium;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+/* .txt-btn-large {
+    font-size: large;
+    font-weight: normal;
+    margin-right: 10px;
+} */
+
+
+/**********************************************/
+/************* [page-block stuff] *************/
+/**********************************************/
+
+.page-block:not(:last-child) {
+    padding-bottom: 5px;
+    border-bottom: 1px solid grey;
+}
+
+.page-block {
+    margin-top: 25px;
+}
+
+ 
+/************************************************/
+/************* [duo-col-grid stuff] *************/
+/************************************************/
+
+
+.duo-col-grid {
+    display: grid;
+    grid-template-columns: minmax(min-content, 100px) minmax(10em, 700px);
+    grid-template-areas: "col1 col2";
+    grid-row-gap: 0.5em;
+    grid-column-gap: 0.5em;
+}
+
+.duo-col-grid {
+    margin-bottom: 20px;
+}
+
+col1 {
+    white-space: nowrap;
+}
+
+col2>input {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .duo-col-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "col1"
+            "col2";
+        grid-row-gap: 0em;
+        grid-column-gap: 0em;
+    }
+
+    col2 {
+        margin-bottom: 1em;
+        /* add seperator to make sure input and its label are close together */
+    }
+}
