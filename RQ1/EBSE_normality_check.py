@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
+#TODO: update to your file path before using the code
 
 #function that checks the normality (zz_duration against sentiment)
 def normality_check(dataframe, dataframe_type):            
@@ -61,8 +62,9 @@ def combine_data(dataframe, type_df):
     print(f"appended {type_df}")
     return pd.concat(list_dataframes, ignore_index=True)
 
-# Load the CSV file into a pandas DataFrame
-df = pd.read_csv('scored-data.csv')
+# Load the CSV file into a pandas DataFrame UPDATE TO YOUR FILE PATH
+file_path = r"C:\Users\miaml\Desktop\EvidenceBasedSWE_SATDSentiment\RQ1\scored-data.csv"
+df = pd.read_csv(file_path)
 
 # Dictionary to hold the resulting dataframes
 result_dfs = {}
@@ -118,9 +120,14 @@ for project in projects:
 
 
 
-# uncommend to save into separate .csv files
+#uncomment to save into separate .csv files
 # for key, dataframe in result_dfs.items():
 #     dataframe.to_csv(f'{key}.csv', index=False)
+
+#uncomment to create a file with that includes the the entirety of the cleaned data
+# combine_data(result_dfs, "_comment").to_csv("cleaned_data_comments.csv", index=False)
+# combine_data(result_dfs, "_description").to_csv("cleaned_data_description.csv", index=False)
+
 
 
 #Output the resulting dataframes
