@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data from the CSV file
-data = pd.read_csv('scored-data.csv')
+file_path = r"C:\Users\miaml\Desktop\EvidenceBasedSWE_SATDSentiment\RQ1\scored-data.csv"
+data = pd.read_csv(file_path)
 
 # Ensure the columns of interest are selected (replace 'ColumnA' and 'ColumnB' with actual column names)
 data_subset = data[['classification', 'roberta']]

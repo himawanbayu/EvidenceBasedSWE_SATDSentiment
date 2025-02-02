@@ -28,16 +28,16 @@ def normality_check(dataframe, dataframe_type):
 
         #uncomment below to plot the histogram and Q-Q plot for visualization
         plt.figure(figsize=(12, 5))
-        plt.subplot(1, 2, 1)
+        # plt.subplot(1, 2, 1)
         sns.histplot(zz_duration, kde=True, bins=80, color='skyblue')
         plt.title(f'Histogram for {sentiment}, {dataframe_type}')
         plt.xlabel('zz_duration')
         plt.ylabel('Frequency')
-        plt.subplot(1, 2, 2)
-        sns.scatterplot(x=np.sort(zz_duration), y=np.sort(np.random.normal(np.mean(zz_duration), np.std(zz_duration), len(zz_duration))))
-        plt.title(f'Q-Q Plot for {sentiment}')
-        plt.xlabel('Theoretical Quantiles')
-        plt.ylabel('Sample Quantiles')
+        # plt.subplot(1, 2, 2)
+        # sns.scatterplot(x=np.sort(zz_duration), y=np.sort(np.random.normal(np.mean(zz_duration), np.std(zz_duration), len(zz_duration))))
+        # plt.title(f'Q-Q Plot for {sentiment}')
+        # plt.xlabel('Theoretical Quantiles')
+        # plt.ylabel('Sample Quantiles')
         plt.tight_layout()
         plt.show()
     # Print results
@@ -131,10 +131,10 @@ for project in projects:
 
 
 #Output the resulting dataframes
-# for key, dataframe in result_dfs.items():
-#     print(f"DataFrame for {key}:")
-#     print(dataframe)
-#     print("\n")
+for key, dataframe in result_dfs.items():
+    print(f"DataFrame for {key}:")
+    print(dataframe)
+    print("\n")
 
 
 #checks for normality, outputs in written form wether the data is normally distributed or not as well as a histogram for visualisation
